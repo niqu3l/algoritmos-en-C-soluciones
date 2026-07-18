@@ -34,3 +34,21 @@ void read_fraction(char *f, int *m, int *n) {
 		i++;
 	}
 }
+
+void exchange(int *m, int *n) {
+	int t = *m;
+	*m = *n;
+	*n = t;
+}
+
+void order(int *m, int *n, int *o) {
+	int t;
+	if (*o > *n)
+		exchange(o, n);
+
+	if (*n > *m)
+		exchange(n, m);
+
+	if (*o > *n)
+		exchange(o, n);
+}
